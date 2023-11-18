@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="panel_admin.php">Panel de Administrador</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="panel_admin.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="openSettings()">Configuración</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="usuarios.php">
+                Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="openSettings()">
+                Configuración
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <center>
+          <h2>Contenido Principal</h2>
+          <h2>Dar doble clic en configuración para que se despliegue el menu</h2>
+        </center>
+      </main>
+    </div>
+  </div>
+
+  <div class="settings-popup" id="settingsPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closeSettings()">&times;</span>
+      <h2>Configuración</h2>
+      <div>
+        <h3>Cambiar Contraseña</h3>
+        <label for="newPassword">Nueva Contraseña:</label>
+        <input type="password" id="newPassword">
+        <br><button class="btn btn-primary" onclick="changePassword()">Guardar</button>
+      </div>
+      <div>
+        <h3>Preferencias de Tema</h3>
+        <label for="theme">Seleccione un tema:</label>
+        <select id="theme" class="form-control">
+          <option value="light">Claro</option>
+          <option value="dark">Oscuro</option>
+        </select>
+        <br><button class="btn btn-primary" onclick="changeTheme()">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+
+</html>
